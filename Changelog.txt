@@ -1,0 +1,6 @@
+﻿Sadly, I only started this file at version 1.8
+
+1.8 (09/26/2010)
+- Added user-defined fields
+- Fixed bugs
+- Cleaned up help/fhelp functions

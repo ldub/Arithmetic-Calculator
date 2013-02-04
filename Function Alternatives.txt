@@ -1,0 +1,25 @@
+﻿Alternative ways of making some of the functions:
+GCF:
+public static double EuclidGCF(double num1, double num2) {
+    if (num1 == 0) {
+        return num2;
+    }
+    while (num2 != 0) {
+        if (num1 > num2) {
+            num1 = num1 - num2;
+        }
+        if (num2 >= num1) {
+            num2 = num2 - num1;
+        }
+    }
+    return num1;
+}
+
+LCM:
+public static double LCM(double num1, double num2) {
+    double lcm = 1;
+    for (lcm = 1; lcm % num1 != 0 || lcm % num2 != 0; lcm++);
+    return lcm;
+}
+
+of course, checking for whole numbers must be implemented in both of the above.

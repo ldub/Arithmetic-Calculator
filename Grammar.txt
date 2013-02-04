@@ -1,0 +1,33 @@
+﻿This is the grammar used for the Parser.cs
+It is written in the Parser.cs aswell.
+
+Expr       ::= Assignment | Function | Field | Add 
+Assignment ::= Field (':=' | "-=" | "+=" | "/=" | "*=" ) Expr
+Add        ::= Mul | Add ('+' | '-') Mul
+Mul        ::= Power | Mul('*'|'/') Power| Mul Power'
+Power      ::= Unary | Unary ^ Power
+Power'     ::= Factorial | Factorial ^ Power
+Unary      ::= Factorial | ('+' | '-') Factorial
+Factorial  ::= SubExp |  SubExp '!'
+SubExp     ::= '(' expr ')' | Variable
+Field'     ::= chars+
+Function   ::= chars+ '(' expr [, expr]* ')'
+Variable   ::= '$' number | String
+String     ::= '"'chars+'"' | Field
+Field      ::= chars+ | Num
+Num        ::= .number Exp? | num (.(num)?)? exp?
+Number     ::= ('0'|'1'|'2'|'3'|'4'|'5'|'6'|'7'|'7'|'9')
+Exp        ::= ( 'e' | 'E' ) Number
+
+5 * (ab := 8), 5 * 8 = 40
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
